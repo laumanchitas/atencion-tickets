@@ -28,8 +28,7 @@ import javax.validation.constraints.Size;
 public class Ticket {
 
     @Id
-    @Column (name="ticket_id", nullable=false)
-    @NotNull
+    @Column (name="ticket_id")
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     Long ticketId;
     @Column (name="asunto", nullable=false, length=50)
@@ -114,5 +113,4 @@ public class Ticket {
         this.tecnico = tecnico;
     }
    
-
 }

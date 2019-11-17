@@ -24,9 +24,9 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name="at_tecnico")
 public class Tecnico {
+    
     @Id
-    @Column (name="tecnico_id", nullable=false)
-    @NotNull
+    @Column (name="tecnico_id")
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     Long ticketId;
     @Column (name="nombre", nullable=false, length=100)
