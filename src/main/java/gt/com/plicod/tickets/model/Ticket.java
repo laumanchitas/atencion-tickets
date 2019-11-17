@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,6 +26,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name="at_ticket")
 public class Ticket {
+
     @Id
     @Column (name="ticket_id", nullable=false)
     @NotNull
@@ -48,8 +51,9 @@ public class Ticket {
     @Temporal (TemporalType.TIMESTAMP)
     @Column (name="fecha_solucion")
     Date fechaSolucion;
-    @Column (name="tecnico_id")
-    Integer tecnicoId;
+    @ManyToOne
+    @JoinColumn (name="tecnico_id")
+    Tecnico tecnico;
 
     public Ticket() {
     }
@@ -102,13 +106,13 @@ public class Ticket {
         this.fechaSolucion = fechaSolucion;
     }
 
-    public Integer getTecnicoId() {
-        return tecnicoId;
+    public Tecnico getTecnico() {
+        return tecnico;
     }
 
-    public void setTecnicoId(Integer tecnicoId) {
-        this.tecnicoId = tecnicoId;
+    public void setTecnico(Tecnico tecnico) {
+        this.tecnico = tecnico;
     }
+   
 
-    
 }
