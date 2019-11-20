@@ -63,8 +63,7 @@ public class AtTecnico implements Serializable {
         this.tecnicoId = tecnicoId;
     }
 
-    public AtTecnico(Integer tecnicoId, String nombre, String email) {
-        this.tecnicoId = tecnicoId;
+    public AtTecnico(String nombre, String email) {
         this.nombre = nombre;
         this.email = email;
     }
